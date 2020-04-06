@@ -2,16 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import axios from 'axios';
+axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com/'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+axios.interceptors.request.use(req => {
+    console.log(req)
+    return req;
+}, error => {
+    console.log(error);
+    return Promise.reject(error)
+});
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
+
