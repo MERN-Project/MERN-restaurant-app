@@ -3,9 +3,10 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'
 
 // import NavBar from '../Layout/NavBar'
-// import Carousel from '../Layout/carousel'
+import Carousel from '../Layout/carousel'
 
 import MenuList from '../MenuList/MenuList'
+import './MenuListStyle.css'
 
 export default class MymenuList extends Component {
     state = {
@@ -39,17 +40,20 @@ export default class MymenuList extends Component {
     render() {
         const lists = this.state.lists.map(item => {
 
-            return <MenuList
-                key={item.id}
-                title={item.title}
-                postClicked={() => { this.postClickHandler(item.id) }}
-            >
+            return (<div className="MenuListStyle">
+                <MenuList
+                    key={item.id}
+                    title={item.title}
+                    postClicked={() => { this.postClickHandler(item.id) }}
+                >
 
-            </MenuList>
+                </MenuList>
+            </div>
+            )
         })
         return (
             <section className="Lists">
-
+                <Carousel />
                 {lists}
 
             </section>
