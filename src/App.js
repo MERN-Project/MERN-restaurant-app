@@ -1,17 +1,22 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/Layout/NavBar'
-import Carousel from './components/Layout/carousel'
+
+
 import Container from './container/Container'
 
 function App() {
-  return (
-    <div className="App">
-      <NavBar/>
-      <Carousel/>
-      <Container/>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <div className="App">
+
+                <Container />
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
+
+
+
