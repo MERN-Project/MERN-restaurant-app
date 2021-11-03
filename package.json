@@ -27,6 +27,6 @@
     "react-bootstrap-star-rating": "^3.5.5-alpha.0.3",
     "react-star-rating-component": "^1.4.1",
     "react-stars": "^2.2.5",
-    "validator": "^10.4.0"
+    "validator": "^13.7.0"
   }
 }
